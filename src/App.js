@@ -1,14 +1,13 @@
-import './App.css';
+import { Route, Routes } from 'react-router';
 import React from 'react';
-import useTranslate from './Hooks/useTranslate';
+import { HOME } from './Constants/Routes/RoutesConstant';
+import Home from './Views/AppView/Home/Home';
 
 function App() {
-	const { t } = useTranslate();
 	return (
-		<div>
-			<h1>{t('welcome')}</h1>
-			<p>{t('greeting', { name: 'John' })}</p>
-		</div>
+		<Routes>
+			<Route path={`${HOME}`} element={<Home />} />
+		</Routes>
 	);
 }
 
